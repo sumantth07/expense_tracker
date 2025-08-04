@@ -1,0 +1,31 @@
+
+.inputs {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    gap: 7px;
+}
+    
+.basic-details {
+    grid-column: span 2 / span 2;
+    background-color: aqua;
+    height: 200px;
+    
+}
+h2{
+  display: inline;
+}
+.expenses {
+    grid-column: span 7 / span 7;
+    grid-row: span 8 / span 8;
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+.expense-tracker {
+    grid-column: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 1;
+}
+
+        

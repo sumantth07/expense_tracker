@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .app-container {
+            width: 100%;
+            max-width: 800px;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        .summary {
+            display: flex;
+            justify-content: space-around;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .summary-box h3 {
+            margin: 0 0 10px 0;
+            color: #555;
+            font-size: 1em;
+        }
+
+        .summary-box p {
+            margin: 0;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        #user-salary { color: #2ecc71; }
+        #total-expenses { color: #e74c3c; }
+        #remaining-salary { color: #3498db; }
+
+        .forms-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .basic-details, .expense-tracker {
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #enter-button { background-color: #3498db; }
+        #enter-button:hover { background-color: #2980b9; }
+        #add-button { background-color: #2ecc71; }
+        #add-button:hover { background-color: #27ae60; }
+
+        .expenses-list h2 {
+            text-align: left;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        #transaction-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #transaction-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            background-color: #fdfdfd;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .transaction-amount {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        <h1>Expense Tracker</h1>
+
+        <div class="summary">
+            <div class="summary-box">
+                <h3>Salary</h3>
+                <p id="user-salary">₹0.00</p>
+            </div>
+            <div class="summary-box">
+                <h3>Total Expenses</h3>
+                <p id="total-expenses">₹0.00</p>
+            </div>
+            <div class="summary-box">
+                <h3>Remaining</h3>
+                <p id="remaining-salary">₹0.00</p>
+            </div>
+        </div>
+
+        <div class="forms-container">
+            <div class="basic-details">
+                <h2>Your Details</h2>
+                <div class="form-group">
+                    <label for="name-input">Name</label>
+                    <input id="name-input" type="text" placeholder="e.g., John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="salary-input">Monthly Salary</label>
+                    <input id="salary-input" type="number" placeholder="e.g., 50000">
+                </div>
+                <button id="enter-button">Save Details</button>
+            </div>
+
+            <div class="expense-tracker">
+                <h2>Add Expense</h2>
+                <div class="form-group">
+                    <label for="expense-description">Description</label>
+                    <input id="expense-description" type="text" placeholder="e.g., Coffee">
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input id="amount" type="number" placeholder="e.g., 150">
+                </div>
+                <button id="add-button">Add Expense</button>
+            </div>
+        </div>
+
+        <div class="expenses-list">
+            <h2>Transaction History</h2>
+            <ul id="transaction-list">
+                <!-- Transactions will be added here by JavaScript -->
+            </ul>
+            <button id="reset-button" style="background-color:#e74c3c; margin-top:20px;">Reset All</button>
+        </div>
+    </div>
+ <script src="index.js"></script>
+</body>
+</html>
